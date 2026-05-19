@@ -34,7 +34,7 @@
   <header class="navbar">
     <div class="nav-container">
       <div class="nav-brand">
-        <img src="logo.png" alt="Logo Pinta Barber Shop" class="brand-logo-img" />
+        <div class="brand-logo">✂️</div>
         <div class="brand-text">
           <span class="brand-title">PINTA BARBER SHOP</span>
           <span class="brand-tagline">Centro de Reservas</span>
@@ -178,7 +178,8 @@
                 <line x1="10" y1="14" x2="21" y2="3"></line>
               </svg>
             </a>
-            <a href="https://gramajohan.github.io/PINTA-BARBER-SHOP/" class="link-secondary">Panel de Barberos →</a>
+            <a href="https://gramajohan.github.io/PINTA-BARBER-SHOP/login.html" class="link-secondary">Panel de Barberos
+              →</a>
           </div>
         </div>
 
@@ -207,7 +208,7 @@
                 <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
               </svg>
             </a>
-            <span class="telegram-badge">@PintaBarberiaBot</span>
+            <span class="telegram-badge">@PINTA_BARBER_SHOP_bot </span>
           </div>
         </div>
       </div>
@@ -223,8 +224,8 @@
           <div class="hero-badge">Interactive Demo</div>
           <h2 class="section-title">Pruébalo tú mismo en vivo</h2>
           <p class="simulator-desc">
-            Haz clic en los botones para alternar entre el flujo de reserva en la **App Web** y en el **Bot de
-            Telegram**. Mira cómo la tecnología de Pinta Barber Shop facilita tu agendamiento.
+            Haz clic en los botones para alternar entre el flujo de reserva en la App Web y en el Bot de
+            Telegram. Mira cómo la tecnología de Pinta Barber Shop facilita tu agendamiento.
           </p>
 
           <div class="simulator-toggles">
@@ -302,17 +303,21 @@
                   <div class="web-sim-step" id="web-step-2">
                     <h5 class="sim-subtitle">2. Elige el Servicio</h5>
                     <div class="sim-list-options">
-                      <div class="sim-list-item" onclick="webNextStep(2, 'Corte ($16k)')">
-                        <span>Corte Clásico</span>
-                        <span class="price">$16.000</span>
-                      </div>
-                      <div class="sim-list-item" onclick="webNextStep(2, 'Corte + Barba ($20k)')">
-                        <span>Corte + Barba + Cejas</span>
-                        <span class="price">$20.000</span>
-                      </div>
-                      <div class="sim-list-item" onclick="webNextStep(2, 'Corte + Cejas ($17k)')">
-                        <span>Corte + Cejas</span>
+                      <div class="sim-list-item" onclick="webNextStep(2, 'Corte Clásico / Moderno ($17.000)')">
+                        <span>Corte Clásico / Moderno</span>
                         <span class="price">$17.000</span>
+                      </div>
+                      <div class="sim-list-item" onclick="webNextStep(2, 'Corte + Barba + Cejas ($22.000)')">
+                        <span>Corte + Barba + Cejas</span>
+                        <span class="price">$22.000</span>
+                      </div>
+                      <div class="sim-list-item" onclick="webNextStep(2, 'Barba Detallada ($8.000)')">
+                        <span>Barba Detallada</span>
+                        <span class="price">$8.000</span>
+                      </div>
+                      <div class="sim-list-item" onclick="webNextStep(2, 'Líneas y Diseños ($3.000)')">
+                        <span>Líneas y Diseños</span>
+                        <span class="price">$3.000</span>
                       </div>
                     </div>
                   </div>
@@ -385,7 +390,7 @@
       <div class="section-header text-center">
         <div class="hero-badge">Catálogo y Tarifas</div>
         <h2 class="section-title">Servicios Destacados</h2>
-        <p class="section-subtitle">Precios justos, barberos certificados y la mejor atención.</p>
+        <p class="section-subtitle">Precios justos, barberos experimentados y la mejor atención.</p>
       </div>
 
       <div class="services-cards-grid">
@@ -395,7 +400,7 @@
             <h4>Corte Clásico / Moderno</h4>
           </div>
           <div class="price-row">
-            <span class="price-amount">$16.000</span>
+            <span class="price-amount">$17.000</span>
             <span class="price-time">/ 50 min</span>
           </div>
           <p class="service-card-desc">Cortes con degrade perfecto, tijera o navaja adaptados a tu estilo.</p>
@@ -408,7 +413,7 @@
             <h4>Corte + Barba + Cejas</h4>
           </div>
           <div class="price-row">
-            <span class="price-amount">$20.000</span>
+            <span class="price-amount">$22.000</span>
             <span class="price-time">/ 70 min</span>
           </div>
           <p class="service-card-desc">El combo premium definitivo para una renovación y definición completa.</p>
@@ -420,10 +425,10 @@
             <h4>Barba Detallada</h4>
           </div>
           <div class="price-row">
-            <span class="price-amount">$7.000</span>
+            <span class="price-amount">$8.000</span>
             <span class="price-time">/ 30 min</span>
           </div>
-          <p class="service-card-desc">Perfilado, afeitado al vapor con toallas calientes e hidratación de barba.</p>
+          <p class="service-card-desc">Perfilado y diseño personalizado de barba.</p>
         </div>
 
         <div class="service-price-card">
@@ -444,7 +449,7 @@
         <div class="amenities-flex">
           <div class="amenity-pill">❄️ Aire Acondicionado</div>
           <div class="amenity-pill">📶 Wi-Fi Alta Velocidad</div>
-          <div class="amenity-pill">💊 Asesoría en Minoxidil</div>
+          <div class="amenity-pill">💊 Venta de Minoxidil</div>
           <div class="amenity-pill">💳 Pagos Digitales (Nequi / Bre-B)</div>
         </div>
       </div>
@@ -483,7 +488,7 @@
             <div class="contact-detail-item">
               <span class="icon">📞</span>
               <div>
-                <h5>WhatsApp Directo</h5>
+                <h5>Llamadas</h5>
                 <p>+57 311 219 5634</p>
               </div>
             </div>

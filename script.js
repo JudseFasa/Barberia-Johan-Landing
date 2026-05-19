@@ -22,25 +22,25 @@ document.addEventListener('DOMContentLoaded', () => {
 // Switch between Web and Telegram Simulator Views
 function switchSimulator(platform) {
   currentPlatform = platform;
-  
+
   // Update toggle buttons
   const btnWeb = document.getElementById('toggle-web');
   const btnTelegram = document.getElementById('toggle-telegram');
-  
+
   const screenWeb = document.getElementById('screen-web');
   const screenTelegram = document.getElementById('screen-telegram');
-  
+
   if (platform === 'web') {
     btnWeb.classList.add('active');
     btnTelegram.classList.remove('active');
     screenWeb.classList.add('active');
     screenTelegram.classList.remove('active');
-    
+
     // Update step description highlights for Web
     document.getElementById('step-desc-1').className = "sim-step-item active";
     document.getElementById('step-desc-2').className = "sim-step-item";
     document.getElementById('step-desc-3').className = "sim-step-item";
-    
+
     document.getElementById('step-title-1').innerText = "Seleccionar Barbero";
     document.getElementById('step-text-1').innerText = "Elige a tu profesional de confianza para el servicio.";
     document.getElementById('step-title-2').innerText = "Seleccionar Servicio";
@@ -52,12 +52,12 @@ function switchSimulator(platform) {
     btnTelegram.classList.add('active');
     screenWeb.classList.remove('active');
     screenTelegram.classList.add('active');
-    
+
     // Update step description highlights for Telegram
     document.getElementById('step-desc-1').className = "sim-step-item active-telegram active";
     document.getElementById('step-desc-2').className = "sim-step-item";
     document.getElementById('step-desc-3').className = "sim-step-item";
-    
+
     document.getElementById('step-title-1').innerText = "Enviar Comando /start";
     document.getElementById('step-text-1').innerText = "Inicia el bot y selecciona la opción de Agendar.";
     document.getElementById('step-title-2').innerText = "Teclados Inline Interactivos";
@@ -73,13 +73,13 @@ function switchSimulator(platform) {
 
 function resetWebSim() {
   webBookingData = { barbero: '', servicio: '', hora: '' };
-  
+
   // Reset all steps visibility
   document.getElementById('web-step-1').classList.add('active');
   document.getElementById('web-step-2').classList.remove('active');
   document.getElementById('web-step-3').classList.remove('active');
   document.getElementById('web-step-4').classList.remove('active');
-  
+
   if (currentPlatform === 'web') {
     updateStepIndicator(1);
   }
@@ -99,12 +99,12 @@ function webNextStep(currentStepNumber, value) {
   } else if (currentStepNumber === 3) {
     webBookingData.hora = value;
     document.getElementById('web-step-3').classList.remove('active');
-    
+
     // Fill success info
     document.getElementById('summary-web-barbero').innerText = webBookingData.barbero;
     document.getElementById('summary-web-servicio').innerText = webBookingData.servicio;
     document.getElementById('summary-web-hora').innerText = webBookingData.hora;
-    
+
     document.getElementById('web-step-4').classList.add('active');
   }
 }
@@ -175,7 +175,7 @@ function scrollTgChat() {
 
 function tgSelectStart(option) {
   if (tgCurrentStep !== 0) return;
-  
+
   // Disable previous buttons visually
   disableLastKeyboard();
 
@@ -183,7 +183,7 @@ function tgSelectStart(option) {
     appendTelegramSentMessage('📅 Agendar Cita');
     tgCurrentStep = 1;
     updateStepIndicator(2);
-    
+
     simulateTelegramTyping(() => {
       const container = document.getElementById('tg-chat-container');
       const responseGroup = document.createElement('div');
@@ -230,9 +230,10 @@ function tgSelectBarbero(barberName) {
     responseGroup.innerHTML = `
       <div class="tg-msg received">✨ ¿Qué servicio te vas a realizar hoy con ${barberName}?</div>
       <div class="tg-inline-keyboard">
-        <button class="tg-inline-btn" onclick="tgSelectServicio('Corte Clásico')">✂️ Corte Clásico ($16k)</button>
-        <button class="tg-inline-btn" onclick="tgSelectServicio('Corte + Barba + Cejas')">✨ Combo Premium ($20k)</button>
-        <button class="tg-inline-btn" onclick="tgSelectServicio('Barba Detallada')">🧔 Barba ($7k)</button>
+        <button class="tg-inline-btn" onclick="tgSelectServicio('Corte Clásico / Moderno')">✂️ Corte Clásico / Moderno ($17.000)</button>
+        <button class="tg-inline-btn" onclick="tgSelectServicio('Corte + Barba + Cejas')">✨ Combo Premium ($22.000)</button>
+        <button class="tg-inline-btn" onclick="tgSelectServicio('Barba Detallada')">🧔 Barba Detallada ($8.000)</button>
+        <button class="tg-inline-btn" onclick="tgSelectServicio('Líneas y Diseños')">🧔 Líneas y Diseños ($3.000)</button>
       </div>
     `;
     container.appendChild(responseGroup);
