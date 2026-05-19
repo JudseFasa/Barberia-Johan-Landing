@@ -300,3 +300,40 @@ function disableLastKeyboard() {
     });
   }
 }
+
+// ----------------------------------------------------
+// THEME TOGGLE LOGIC (LIGHT MODE BY DEFAULT)
+// ----------------------------------------------------
+document.addEventListener('DOMContentLoaded', () => {
+  const themeToggle = document.getElementById('theme-toggle');
+  const sunIcon = document.querySelector('.sun-icon');
+  const moonIcon = document.querySelector('.moon-icon');
+
+  if (!themeToggle) return;
+
+  // Check if dark theme was saved in localStorage
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-theme');
+    sunIcon.style.display = 'none';
+    moonIcon.style.display = 'block';
+  } else {
+    document.body.classList.remove('dark-theme');
+    sunIcon.style.display = 'block';
+    moonIcon.style.display = 'none';
+  }
+
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+    const isDark = document.body.classList.contains('dark-theme');
+    
+    if (isDark) {
+      localStorage.setItem('theme', 'dark');
+      sunIcon.style.display = 'none';
+      moonIcon.style.display = 'block';
+    } else {
+      localStorage.setItem('theme', 'light');
+      sunIcon.style.display = 'block';
+      moonIcon.style.display = 'none';
+    }
+  });
+});
