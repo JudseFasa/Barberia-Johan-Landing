@@ -256,10 +256,10 @@ function tgSelectServicio(serviceName) {
     responseGroup.innerHTML = `
       <div class="tg-msg received">📅 Selecciona un horario disponible para mañana:</div>
       <div class="tg-inline-keyboard tg-inline-grid">
-        <button class="tg-inline-btn" onclick="tgSelectHora('09:00 AM')">09:00 AM</button>
-        <button class="tg-inline-btn" onclick="tgSelectHora('11:30 AM')">11:30 AM</button>
-        <button class="tg-inline-btn" onclick="tgSelectHora('03:30 PM')">03:30 PM</button>
+        <button class="tg-inline-btn" onclick="tgSelectHora('03:00 PM')">03:00 PM</button>
+        <button class="tg-inline-btn" onclick="tgSelectHora('04:00 PM')">04:00 PM</button>
         <button class="tg-inline-btn" onclick="tgSelectHora('05:00 PM')">05:00 PM</button>
+        <button class="tg-inline-btn" onclick="tgSelectHora('06:00 PM')">06:00 PM</button>
       </div>
     `;
     container.appendChild(responseGroup);
@@ -325,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
   themeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-theme');
     const isDark = document.body.classList.contains('dark-theme');
-    
+
     if (isDark) {
       localStorage.setItem('theme', 'dark');
       sunIcon.style.display = 'none';
